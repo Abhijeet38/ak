@@ -1,27 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>PDF Viewer</title>
-  <script src="https://github.com/Abhijeet38/ak/blob/main/Lesson%202%20Functions.pdf.js"></script>
+    <meta charset="UTF-8">
+    <title>PDF</title>
+  <style>
+    #myPdf{
+      width:85%;
+      height: 975px;
+  </style>
 </head>
 <body>
-  <div>
-    <canvas id="pdfCanvas"></canvas>
-  </div>
-  <script>
-    const pdfURL = 'https://github.com/Abhijeet38/ak/blob/main/Lesson%202%20Functions.pdf';
-    const canvas = document.getElementById('pdfCanvas');
-
-    // Load the PDF and render it on the canvas
-    pdfjsLib.getDocument(pdfURL).promise.then(pdfDoc => {
-      pdfDoc.getPage(1).then(page => {
-        const viewport = page.getViewport({ scale: 1 });
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-        const context = canvas.getContext('2d');
-        page.render({ canvasContext: context, viewport: viewport });
-      });
-    });
-  </script>
+  <iframe id="myPdf" src="Lesson%202%20Functions.pdf" frameborder="0"></iframe>iframe>
 </body>
 </html>
